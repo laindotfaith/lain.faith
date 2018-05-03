@@ -16,7 +16,7 @@ _target:
 	mkdir _target
 
 _target/%.html: %.rkt
-	$(rkt) -t $< -e '(write-to-file (xexpr->string page) "$@")'
+	$(rkt) -t $< -e '(display-to-file (xexpr->string page) "$@")'
 
 _target/%.css: %.sass
 	$(sassc) $< $@
